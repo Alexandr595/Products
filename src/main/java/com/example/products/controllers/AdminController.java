@@ -26,18 +26,18 @@ public class AdminController {
         this.productService = productService;
     }
 
-    @GetMapping("/users")
+    @GetMapping("/users2")
     public String getAllUsers(Model model) {
         List<User> users = userService.findAll();
-        model.addAttribute("users", users);
-        return "admin/users";
+        model.addAttribute("users2", users);
+        return "admin/users2";
     }
 
-    @GetMapping("/products")
+    @GetMapping("/products2")
     public String getAllProducts(Model model) {
         List<Product> products = productService.getAllProduct();
-        model.addAttribute("products", products);
-        return "admin/products";
+        model.addAttribute("products2", products);
+        return "admin/products2";
     }
 
     // Другие методы для добавления, редактирования и удаления продуктов...
