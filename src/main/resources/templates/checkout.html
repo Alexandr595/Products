@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Оформление заказа</title>
+</head>
+<body>
+<h3>Оформление заказа</h3>
+<form th:object="${order}" th:method="POST" th:action="@{/order/checkout}">
+  <label for="address">Адрес доставки: </label>
+  <input type="text" th:field="*{deliveryAddress}" id="address">
+  <br>
+  <label for="paymentMethod">Метод оплаты: </label>
+  <select id="paymentMethod" th:field="*{paymentMethod}">
+    <option value="CREDIT_CARD">Кредитная карта</option>
+    <option value="PAYPAL">PayPal</option>
+  </select>
+  <br>
+  <input type="submit" value="Оформить заказ">
+</form>
+</body>
+</html>

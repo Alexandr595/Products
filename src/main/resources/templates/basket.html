@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Корзина</title>
+</head>
+<body>
+<h3>Ваша корзина</h3>
+<div th:each="product : ${basket.products}">
+  <p th:text="${product.name}"></p>
+  <p th:text="${product.price}"></p>
+  <a th:href="@{/basket/remove/{id}(id=${product.id})}">Удалить из корзины</a>
+</div>
+<a href="/checkout">Оформить заказ</a>
+</body>
+</html>
